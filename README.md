@@ -12,13 +12,13 @@ Nuvola a entendu parler des caractéristiques propres au cloud (scalabilité, ha
 Elle met donc à votre disposition les sources de son application + dump de sa base de données et vous assigne la tâche de migrer son application vers le cloud AWS.
 
 L’expression des besoins se résume ainsi:
-possibilité pour un administrateur (vous) de fournir automatiquement à un collaborateur (développeur) un environnement de travail uniformisé (machine ec2) dans le cloud avec communication de ses accès. 
-cet environnement contiendra une copie du dépôt
-le développeur devra pouvoir tester localement l’application (avec une base de données local), idéalement sous une forme conteneurisée
-permettre aux collaborateurs d’apporter leur contribution au code source de l’application sur une branche spécifique (exemple: branche ‘new_features’)
-possibilité de (re)déployer l’application en environnement dev/prod le plus rapidement et automatiquement possible
-offrir une garantie de continuité de service de l’application, de disponibilité et d’adaptabilité en cas de charge de travail fluctuante.
-un administrateur (vous), depuis sa propre machine dans le cloud, doit pouvoir aisément contrôler l’ensemble de machines des développeurs afin, par exemple, de pouvoir effectuer des installations, copie de fichiers,  vérification diverses, etc., sur l’ensemble des machines.
+- possibilité pour un administrateur (vous) de fournir automatiquement à un collaborateur (développeur) un    environnement de travail uniformisé (machine ec2) dans le cloud avec communication de ses accès. 
+  - cet environnement contiendra une copie du dépôt
+  - le développeur devra pouvoir tester localement l’application (avec une base de données local), idéalement sous une forme conteneurisée
+- permettre aux collaborateurs d’apporter leur contribution au code source de l’application sur une branche spécifique (exemple: branche ‘new_features’)
+- possibilité de (re)déployer l’application en environnement dev/prod le plus rapidement et automatiquement possible
+- offrir une garantie de continuité de service de l’application, de disponibilité et d’adaptabilité en cas de charge de travail fluctuante.
+- un administrateur (vous), depuis sa propre machine dans le cloud, doit pouvoir aisément contrôler l’ensemble de machines des développeurs afin, par exemple, de pouvoir effectuer des installations, copie de fichiers,  vérification diverses, etc., sur l’ensemble des machines.
 
 
 ## Notes 
