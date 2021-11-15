@@ -34,9 +34,9 @@ Dans le cadre de ce projet, vous devez convoquer une grande partie des connaissa
 
 Vous serez répartis en 3 groupes.
 
-Groupe 1: Pamela, Alexandre, Brice
-Groupe 2: Alyssia, Brice, Sébastien
-Groupe 3: Aude, Pierre, Jocelyn
+- Groupe 1: Pamela, Alexandre, Brice
+- Groupe 2: Alyssia, Brice, Sébastien
+- Groupe 3: Aude, Pierre, Jocelyn
 
 Vous présenterez le projet en fin de semaine (vendredi).
 Durée de la présentation: 30-45 min pour groupe.
