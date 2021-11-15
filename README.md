@@ -4,8 +4,8 @@ L’entreprise Nuvola dispose actuellement d’une application symfony hébergé
 Sources de l’application + dump.sql : https://github.com/cdufour/nuvola/
 
 Nuvola rencontre deux problématiques majeures:
-au niveau des mises à jour de son app (redéploiement), jugées actuellement trop longues et nécessitant trop d’étapes manuelles
-au niveau des performances de l’application qui ralentit souvent en cas de forte affluence et qui parfois connaît des interruptions de services dommageables sur un plan commercial.
+- au niveau des mises à jour de son app (redéploiement), jugées actuellement trop longues et nécessitant trop d’étapes manuelles
+- au niveau des performances de l’application qui ralentit souvent en cas de forte affluence et qui parfois connaît des interruptions de services dommageables sur un plan commercial.
 
 Nuvola a entendu parler des caractéristiques propres au cloud (scalabilité, haute dispo, etc.). Elle requiert vos services pour l’aider à leur apporter une solution à ses problèmes.
 
