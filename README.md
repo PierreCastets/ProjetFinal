@@ -1,5 +1,5 @@
-CloudOps - Projet final - semaine du 15/11/2021
-Présentation
+# CloudOps - Projet final - semaine du 15/11/2021
+## Présentation
 L’entreprise Nuvola dispose actuellement d’une application symfony hébergée sur site et déployée manuellement dans différents environnements (dev, prod). 
 Sources de l’application + dump.sql : https://github.com/cdufour/nuvola/
 
@@ -21,15 +21,15 @@ offrir une garantie de continuité de service de l’application, de disponibili
 un administrateur (vous), depuis sa propre machine dans le cloud, doit pouvoir aisément contrôler l’ensemble de machines des développeurs afin, par exemple, de pouvoir effectuer des installations, copie de fichiers,  vérification diverses, etc., sur l’ensemble des machines.
 
 
-Notes 
-Base de données.
+## Notes 
+### Base de données.
 Nuvola souhaite que sa base de données soit déclinée en une version de production et une version de développement, toutes deux également placées dans AWS.
 Les développeurs, qui pourront tester localement l’application, devront pouvoir alimenter leur instance de base de données locale (conteneur) par récupération du dernier dump de production disponible.
 
-Accès
+### Accès
 Un développeur ne pourra pas accéder aux machines des autres développeurs ni, bien sûr, à la machine admin.
 
-Modalités de travail
+### Modalités de travail
 Dans le cadre de ce projet, vous devez convoquer une grande partie des connaissances accumulées, des concepts et des outils abordés durant le cursus.
 
 Vous serez répartis en 3 groupes.
