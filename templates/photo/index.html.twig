@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Photos{% endblock %}
+
+{% block body %}
+    <style>
+    .thumb { width: 100px }
+    </style>
+
+
+    <h1>Toutes nos photos</h1>
+
+    <a class="btn btn-primary m-4" href="{{ path('photo_new') }}">Ajouter une photo</a>
+
+    <table class="table table-striped table-bordered">
+    {% for photo in photos %}
+        <tr>
+            <td>
+                <img class="thumb" src="{{'uploads/photos/' ~ photo.url}}" />
+            </td>
+            <td>
+                {% if photo.category %}
+                    {{ photo.category.name }}
+                {% endif %}
+            </td>
+            <td>
+                {{ photo.title }}
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

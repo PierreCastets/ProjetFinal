@@ -18,3 +18,8 @@
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
+
+Dockerfile
+docker-compose.yml
+.dockerignore
+000-default.conf
