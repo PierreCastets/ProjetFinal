@@ -24,7 +24,7 @@ COPY . .
 #installation des dépendances
 RUN composer install
 RUN composer dump-autoload
-Run composer update
+RUN composer update
 
 #lancement du serveur symfony
 #RUN /bin/bash -c 'symfony server:start'
