@@ -27,8 +27,7 @@ services:
       - ./:/var/www/html
     depends_on: 
       - nuvola
-    command: bash -c 'composer update'
-    command: bash -c 'symfony server:start'
+    command: bash -c 'composer update && symfony server:start'
     networks:
       vpcbr:
         ipv4_address: 10.5.0.6
