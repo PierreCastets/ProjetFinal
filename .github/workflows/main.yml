@@ -10,30 +10,15 @@ jobs:
       - name: Checkout Latest Repo
         uses: actions/checkout@master
         
-      - name: Generate Deployment Package 
-        run: zip -r deploy.zip * -x '*.git*'
-        
-      - name: Get timestamp
-        uses: gerred/actions/current-time@master
-        id: current-time
-        
-      - name: Run string replace
-        uses: frabert/replace-string-action@master
-        id: format-time
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          pattern: '[:\.]+'
-          string: "${{ steps.current-time.outputs.time }}"
-          replace-with: '-'
-          flags: 'g'
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1
           
-      - name: Deploy to EB
-        uses: einaregilsson/beanstalk-deploy@v18
+      - name: Run CodeBuild
+        uses: aws-actions/aws-codebuild-run-build@v1
         with:
-          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: projetfinal
-          environment_name: Projetfinal-env
-          version_label: "projetfinal-${{ steps.format-time.outputs.replaced }}"
-          region: eu-central-1
-          deployment_package: deploy.zip
+          project-name: CodeBuildProjectName
     
