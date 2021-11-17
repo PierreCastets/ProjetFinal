@@ -1,1 +1,1 @@
-symfony server:start
+web: symfony server:start
