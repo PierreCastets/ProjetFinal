@@ -1,2 +1,2 @@
-web: composer update
+web: composer install
 web: symfony server:start
