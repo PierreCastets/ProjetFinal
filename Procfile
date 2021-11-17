@@ -1,2 +1,2 @@
-wecomposer install
-wesymfony server:start
+web: composer install
+web: symfony server:start
