@@ -1,5 +1,5 @@
 #!/bin/bash
 
-chmod a+w /public/uploads/photos/
+chmod a+w /var/www/html/public/uploads/photos
 composer update 
 symfony server:start
