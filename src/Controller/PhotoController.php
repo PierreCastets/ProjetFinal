@@ -1,15 +1,18 @@
 <?php
 
-namespace App\Controller;
-
-use App\Entity\Photo;
-use App\Form\PhotoType;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\String\Slugger\SluggerInterface;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
+namespace App\Controller;                                                                          
+require '/var/www/html/vendor/autoload.php';                                  
+use Aws\S3\S3Client;                                                                               
+use Aws\Exception\AwsException;                                                          
+use App\Entity\Photo;                                                                    
+use App\Form\PhotoType;                                                                            
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;                                  
+use Symfony\Component\HttpFoundation\Request;                                      
+use Symfony\Component\HttpFoundation\Response;                                                     
+use Symfony\Component\Routing\Annotation\Route;                                          
+use Symfony\Component\String\Slugger\SluggerInterface;                                   
+use Symfony\Component\HttpFoundation\File\Exception\FileException;                                 
+use Aws\Credentials\CredentialProvider;  
 
 class PhotoController extends AbstractController
 {
@@ -19,7 +22,20 @@ class PhotoController extends AbstractController
     public function index(): Response
     {
         $photos = $this->getDoctrine()->getRepository(Photo::class)->findAll();
-
+        try {                                         
+        //Create a S3Clienti                                      
+$s3Client = new S3Client([             
+    'version'     => 'latest',       
+    'region'      => 'eu-central-1',            
+    'credentials' => [                                                         
+        'key'    => 'AKIA6ERQXBWVFQC6YOHI',
+        'secret' => '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'
+    ],                    
+]);                                  
+    $result = $s3Client->downloadBucket('/var/www/html/public/uploads/photos', 'bucket-projet-final', 'uploads/photos');
+} catch (S3Exception $e) {                                                     
+    echo $e->getMessage() . "\n";          
+}    
         return $this->render('photo/index.html.twig', [
             'photos' => $photos,
         ]);
@@ -61,7 +77,20 @@ class PhotoController extends AbstractController
                 $em->persist(($photo));
                 $em->flush();
                 dump($photo);
-
+        try {                                                                                      
+        //Create a S3Clienti                                                       
+$s3Client = new S3Client([                                                                         
+    'version'     => 'latest',                                                           
+    'region'      => 'eu-central-1',                                                     
+    'credentials' => [                                                                             
+        'key'    => 'AKIA6ERQXBWVFQC6YOHI',                                                        
+        'secret' => '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'                    
+    ],                                                                                             
+]);                                                                                      
+    $result = $s3Client->uploadDirectory('/var/www/html/public/uploads/photos', 'bucket-projet-final/uploads/photos');
+} catch (S3Exception $e) {                                                                         
+    echo $e->getMessage() . "\n";                                                                  
+} 
                 return $this->redirectToRoute('photo');
             }
         }
