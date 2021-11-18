@@ -27,7 +27,7 @@ services:
       - ./:/var/www/html
     depends_on: 
       - nuvola
-    command: bash -c 'composer update && symfony server:start'
+    command: bash -c 'chmod a+x boot.sh && ./boot.sh'
     networks:
       vpcbr:
         ipv4_address: 10.5.0.6
