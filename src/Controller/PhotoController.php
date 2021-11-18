@@ -70,8 +70,8 @@ $s3Client = new S3Client([
     'version'     => 'latest',                                                           
     'region'      => 'eu-central-1',                                                     
     'credentials' => [                                                                             
-        'key'    => $_ENV["secrets.AWS_ACCESS_KEY_ID"],                                                        
-        'secret' => $_ENV["secrets.AWS_SECRET_ACCESS_KEY"]                    
+        'key'    => $_ENV["aws_access_key"],                                                        
+        'secret' => $_ENV["aws_secret_key"]                    
     ],                                                                                             
 ]);                                                                                      
     $result = $s3Client->uploadDirectory('/var/www/html/public/uploads/photos', 'bucket-projet-final/uploads/photos');
