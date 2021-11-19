@@ -22,20 +22,20 @@ class PhotoController extends AbstractController
     public function index(): Response
     {
         $photos = $this->getDoctrine()->getRepository(Photo::class)->findAll();
-        try {                                         
+        /**try {                                         
         //Create a S3Clienti                                      
-$s3Client = new S3Client([             
-    'version'     => 'latest',       
-    'region'      => 'eu-central-1',            
-    'credentials' => [                                                         
-        'key'    => 'AKIA6ERQXBWVFQC6YOHI',
-        'secret' => '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'
-    ],                    
-]);                                  
-    $result = $s3Client->downloadBucket('/var/www/html/public/uploads/photos', 'bucket-projet-final', 'uploads/photos');
-} catch (S3Exception $e) {                                                     
-    echo $e->getMessage() . "\n";          
-}    
+*$s3Client = new S3Client([             
+    *'version'     => 'latest',       
+    *'region'      => 'eu-central-1',            
+    *'credentials' => [                                                         
+        *'key'    => 'AKIA6ERQXBWVFQC6YOHI',
+        *'secret' => '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'
+    *],                    
+*]);                                  
+    *$result = $s3Client->downloadBucket('/var/www/html/public/uploads/photos', 'bucket-projet-final', 'uploads/photos');
+*} catch (S3Exception $e) {                                                     
+   * echo $e->getMessage() . "\n";          
+*/}    
         return $this->render('photo/index.html.twig', [
             'photos' => $photos,
         ]);
@@ -77,20 +77,20 @@ $s3Client = new S3Client([
                 $em->persist(($photo));
                 $em->flush();
                 dump($photo);
-        try {                                                                                      
+       /** try {                                                                                      
         //Create a S3Clienti                                                       
-$s3Client = new S3Client([                                                                         
-    'version'     => 'latest',                                                           
-    'region'      => 'eu-central-1',                                                     
-    'credentials' => [                                                                             
-        'key'    => 'AKIA6ERQXBWVFQC6YOHI',                                                        
-        'secret' => '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'                    
-    ],                                                                                             
-]);                                                                                      
-    $result = $s3Client->uploadDirectory('/var/www/html/public/uploads/photos', 'bucket-projet-final/uploads/photos');
-} catch (S3Exception $e) {                                                                         
-    echo $e->getMessage() . "\n";                                                                  
-} 
+*$s3Client = new S3Client([                                                                         
+    *'version'     => 'latest',                                                           
+    *'region'      => 'eu-central-1',                                                     
+    '*credentials' => [                                                                             
+        *'key'    => 'AKIA6ERQXBWVFQC6YOHI',                                                        
+        *'secret' => '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'                    
+   * ],                                                                                             
+*]);                                                                                      
+    *$result = $s3Client->uploadDirectory('/var/www/html/public/uploads/photos', 'bucket-projet-final/uploads/photos');
+*} catch (S3Exception $e) {                                                                         
+    *echo $e->getMessage() . "\n";                                                                  
+*/} 
                 return $this->redirectToRoute('photo');
             }
         }
