@@ -35,7 +35,7 @@ $s3Client = new S3Client([
     $result = $s3Client->downloadBucket('/var/www/html/public/uploads/photos', 'bucket-projet-final', 'uploads/photos');
 } catch (S3Exception $e) {                                                     
     echo $e->getMessage() . "\n";          
-*/}    
+}*/    
         return $this->render('photo/index.html.twig', [
             'photos' => $photos,
         ]);
@@ -90,7 +90,7 @@ $s3Client = new S3Client([
     $result = $s3Client->uploadDirectory('/var/www/html/public/uploads/photos', 'bucket-projet-final/uploads/photos');
 } catch (S3Exception $e) {                                                                         
     echo $e->getMessage() . "\n";                                                                  
-*/} 
+}*/ 
                 return $this->redirectToRoute('photo');
             }
         }
