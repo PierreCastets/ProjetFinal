@@ -36,6 +36,6 @@ class CategoryController extends AbstractController
         $em->persist($category);
         $em->flush();
 
-        return new Response('New category created with id: ' . $category->getId());
+        return new Response('New category created succesfully with id: ' . $category->getId());
     }
 }
