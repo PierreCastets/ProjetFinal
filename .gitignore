@@ -21,3 +21,5 @@
 
 .dockerignore
 000-default.conf
+
+src/Controller/PhotoController.php
