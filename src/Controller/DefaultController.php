@@ -13,7 +13,7 @@ class DefaultController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->json(['value' => rand(0, 100)]);
+        return $this->json(['value' => rand(0, 1000)]);
     }
 
     /**
